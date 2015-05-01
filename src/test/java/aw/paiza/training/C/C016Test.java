@@ -8,21 +8,21 @@ import java.io.FileInputStream;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import aw.paiza.training.C.C017.C017Logic;
+import aw.paiza.training.C.C016.C016Logic;
 
-public class C017Test {
+public class C016Test {
 
-	private static C017Logic logic;
+	private static C016Logic logic;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		logic = new C017Logic();
+		logic = new C016Logic();
 	}
 
 	@Test
-	public void execute1() {
+	public void test() {
 		try {
-			String path = "C:\\00_SSD\\Temp\\testcase\\C017.txt";
+			String path = "C:\\00_SSD\\Temp\\testcase\\C016.txt";
 
 			System.setIn(new FileInputStream(path));
 			logic.execute(System.in);
@@ -33,4 +33,5 @@ public class C017Test {
 		}
 		assertTrue(true);
 	}
+
 }

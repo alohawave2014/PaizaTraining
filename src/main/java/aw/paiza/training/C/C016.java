@@ -3,11 +3,11 @@ package aw.paiza.training.C;
 import java.io.InputStream;
 import java.util.Scanner;
 
-public class C017 {
+public class C016 {
 
 	public static void main(String[] args) {
 
-		C017Logic logic = new C017Logic();
+		C016Logic logic = new C016Logic();
 		try {
 			logic.execute(System.in);
 		} catch (Exception e) {
@@ -19,7 +19,7 @@ public class C017 {
 	 * 実行クラス
 	 * @author m.s
 	 */
-	public static class C017Logic {
+	public static class C016Logic {
 
 		// メインロジック
 		public void execute(InputStream input) {
@@ -49,7 +49,6 @@ public class C017 {
 			}
 			scan.close();
 		}
-
 	}
 
 }
