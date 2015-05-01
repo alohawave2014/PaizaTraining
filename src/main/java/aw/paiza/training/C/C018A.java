@@ -28,7 +28,7 @@ public class C018A {
 
 		public void execute(InputStream input) {
 			Scanner scan = new Scanner(input);
-			scan.useDelimiter("\\r\\n");
+			scan.useDelimiter(System.getProperty("line.separator"));
 			int qty = 0;
 
 			Map<String, Integer> resipi = new HashMap<String, Integer>();

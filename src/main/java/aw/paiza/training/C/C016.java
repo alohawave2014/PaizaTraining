@@ -24,7 +24,7 @@ public class C016 {
 		// メインロジック
 		public void execute(InputStream input) {
 			Scanner scan = new Scanner(input);
-			//			scan.useDelimiter("\\r\\n");
+			scan.useDelimiter(System.getProperty("line.separator"));
 
 			int parentNo1 = scan.nextInt();
 			int parentNo2 = scan.nextInt();

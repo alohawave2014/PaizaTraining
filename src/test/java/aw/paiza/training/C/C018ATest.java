@@ -4,6 +4,7 @@ import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
 import java.io.FileInputStream;
+import java.io.InputStream;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -22,9 +23,10 @@ public class C018ATest {
 	@Test
 	public void execute1() {
 		try {
-			String path = "C:\\00_SSD\\Temp\\testcase\\C018.txt";
+			//InputStream input = new FileInputStream("C:\\00_SSD\\Temp\\testcase\\C018.txt");
+		    InputStream input = ClassLoader.getSystemResourceAsStream("C/C018.txt");
 
-			System.setIn(new FileInputStream(path));
+			System.setIn(input);
 			logic.execute(System.in);
 
 		} catch (Exception e) {
