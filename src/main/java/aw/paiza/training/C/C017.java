@@ -1,0 +1,55 @@
+package aw.paiza.training.C;
+
+import java.io.InputStream;
+import java.util.Scanner;
+
+public class C017 {
+
+	public static void main(String[] args) {
+
+		MyLogic logic = new MyLogic();
+		try {
+			logic.execute(System.in);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	/**
+	 * 実行クラス
+	 * @author m.s
+	 */
+	public static class MyLogic {
+
+		// メインロジック
+		public void execute(InputStream input) {
+			Scanner scan = new Scanner(input);
+			//			scan.useDelimiter("\\r\\n");
+
+			int parentNo1 = scan.nextInt();
+			int parentNo2 = scan.nextInt();
+
+			int childqty = scan.nextInt();
+
+			for (int i = 0; i < childqty; i++) {
+				int cNo1 = scan.nextInt();
+				int cNo2 = scan.nextInt();
+
+				if (parentNo1 > cNo1) {
+					System.out.println("High");
+				} else if (parentNo1 < cNo1) {
+					System.out.println("Low");
+				} else {
+					if (parentNo2 > cNo2) {
+						System.out.println("Low");
+					} else if (parentNo2 < cNo2) {
+						System.out.println("High");
+					}
+				}
+			}
+			scan.close();
+		}
+
+	}
+
+}
