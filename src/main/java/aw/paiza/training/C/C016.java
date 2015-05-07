@@ -3,6 +3,11 @@ package aw.paiza.training.C;
 import java.io.InputStream;
 import java.util.Scanner;
 
+/**
+ * Leet
+ * @author m.s
+ *
+ */
 public class C016 {
 
 	public static void main(String[] args) {
@@ -24,29 +29,49 @@ public class C016 {
 		// メインロジック
 		public void execute(InputStream input) {
 			Scanner scan = new Scanner(input);
-			scan.useDelimiter(System.getProperty("line.separator"));
+			//scan.useDelimiter(System.getProperty("line.separator"));
+			String val = scan.next();
 
-			int parentNo1 = scan.nextInt();
-			int parentNo2 = scan.nextInt();
+			// replaceAll 版
+			val = val.replaceAll("A", "4");
+			val = val.replaceAll("E", "3");
+			val = val.replaceAll("G", "6");
+			val = val.replaceAll("I", "1");
+			val = val.replaceAll("O", "0");
+			val = val.replaceAll("S", "5");
+			val = val.replaceAll("Z", "2");
 
-			int childqty = scan.nextInt();
-
-			for (int i = 0; i < childqty; i++) {
-				int cNo1 = scan.nextInt();
-				int cNo2 = scan.nextInt();
-
-				if (parentNo1 > cNo1) {
-					System.out.println("High");
-				} else if (parentNo1 < cNo1) {
-					System.out.println("Low");
-				} else {
-					if (parentNo2 > cNo2) {
-						System.out.println("Low");
-					} else if (parentNo2 < cNo2) {
-						System.out.println("High");
-					}
-				}
-			}
+			// switch版
+			//			StringBuilder sb = new StringBuilder(val);
+			//			for (int i = 0; i < val.length(); i++) {
+			//				switch (val.charAt(i)) {
+			//				case 'A':
+			//					sb.setCharAt(i, '4');
+			//					break;
+			//				case 'E':
+			//					sb.setCharAt(i, '3');
+			//					break;
+			//				case 'G':
+			//					sb.setCharAt(i, '6');
+			//					break;
+			//				case 'I':
+			//					sb.setCharAt(i, '1');
+			//					break;
+			//				case 'O':
+			//					sb.setCharAt(i, '0');
+			//					break;
+			//				case 'S':
+			//					sb.setCharAt(i, '5');
+			//					break;
+			//				case 'Z':
+			//					sb.setCharAt(i, '2');
+			//					break;
+			//				default:
+			//					break;
+			//				}
+			//			}
+			//			val = sb.toString();
+			System.out.println(val);
 			scan.close();
 		}
 	}

@@ -3,7 +3,6 @@ package aw.paiza.training.C;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import java.io.FileInputStream;
 import java.io.InputStream;
 
 import org.junit.BeforeClass;
@@ -23,7 +22,8 @@ public class C016Test {
 	@Test
 	public void test() {
 		try {
-			InputStream input = ClassLoader.getSystemResourceAsStream("aw.test.C.C016.txt");
+			String path = "aw/test/C/C016.txt";
+			InputStream input = ClassLoader.getSystemResourceAsStream(path);
 			System.setIn(input);
 			logic.execute(System.in);
 

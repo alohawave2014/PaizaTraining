@@ -3,29 +3,31 @@ package aw.paiza.training.C;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import java.io.FileInputStream;
+import java.io.InputStream;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import aw.paiza.training.C.C017.C017Logic;
+import aw.paiza.training.C.C015.C015Logic;
 
-public class C017Test {
+public class C015Test {
 
-	private static C017Logic logic;
+	private static C015Logic logic;
 
 	@BeforeClass
 	public static void setUpBeforeClass() throws Exception {
-		logic = new C017Logic();
+		logic = new C015Logic();
 	}
 
 	@Test
-	public void execute1() {
+	public void test() {
 		try {
-			String path = "C:\\00_SSD\\Temp\\testcase\\C017.txt";
-			//			System.setIn(new FileInputStream(path));
-			//			logic.execute(System.in);
-			logic.execute(new FileInputStream(path));
+			String path = "aw/test/C/C015";
+			InputStream input = ClassLoader.getSystemResourceAsStream(path);
+			System.setIn(input);
+
+			int result = logic.execute(System.in);
+			assertTrue((result == 75));
 
 		} catch (Exception e) {
 			e.printStackTrace();

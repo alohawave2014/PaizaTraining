@@ -24,7 +24,7 @@ public class C018ATest {
 	public void execute1() {
 		try {
 			//InputStream input = new FileInputStream("C:\\00_SSD\\Temp\\testcase\\C018.txt");
-		    InputStream input = ClassLoader.getSystemResourceAsStream("C/C018.txt");
+			InputStream input = ClassLoader.getSystemResourceAsStream("aw/test/C/C018.txt");
 
 			System.setIn(input);
 			logic.execute(System.in);
