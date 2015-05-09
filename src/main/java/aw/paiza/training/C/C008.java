@@ -58,12 +58,6 @@ public class C008 {
 
 				// extract next string
 				line = line.substring(idx);
-				//
-				// try {
-				// line = line.substring(idx + tagTo.length());
-				// } catch (IndexOutOfBoundsException e) {
-				// break;
-				// }
 			}
 			scan.close();
 		}
