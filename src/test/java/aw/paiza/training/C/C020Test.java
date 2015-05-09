@@ -6,16 +6,16 @@ import java.io.InputStream;
 
 import org.junit.Test;
 
-import aw.paiza.training.C.C014.C014Logic;
+import aw.paiza.training.C.C020.C020Logic;
 
-public class C014Test {
+public class C020Test {
 
-	private static C014Logic logic = new C014Logic();
+	private static C020Logic logic = new C020Logic();
 
 	@Test
 	public void test() {
 		try {
-			String path = "aw/test/C/C014";
+			String path = "aw/test/C/C020";
 			InputStream input = ClassLoader.getSystemResourceAsStream(path);
 			System.setIn(input);
 
@@ -24,7 +24,7 @@ public class C014Test {
 
 		} catch (Exception e) {
 			e.printStackTrace();
-			fail("exception occured");
+			fail("exceptin occured");
 		}
 	}
 
