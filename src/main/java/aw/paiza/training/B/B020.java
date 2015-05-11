@@ -2,6 +2,9 @@ package aw.paiza.training.B;
 
 import java.io.InputStream;
 import java.util.Scanner;
+import java.util.Stack;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * ネットサーフィン
@@ -22,12 +25,40 @@ public class B020 {
 
 	public static class B020Logic {
 
+		private static final String BACK = "use the back button";
+		private static final String GOPAGE = "go to (.+)";
+
 		public void execute(InputStream input) {
 			Scanner scan = new Scanner(input);
-			// scan.useDelimiter(System.getProperty("line.separator"));
+			scan.useDelimiter(System.getProperty("line.separator"));
 
-			int ipCnt = scan.nextInt();
-			System.out.println(String.valueOf(ipCnt));
+			int qryCnt = scan.nextInt();
+
+			Pattern ptn = Pattern.compile(GOPAGE);
+			Stack<String> history = new Stack<String>();
+			//			scan.next();
+			//			history.push("go to blank page");
+
+			boolean isPrevOperationIsBack = false;
+			for (int i = 0; i < qryCnt; i++) {
+				String line = scan.next();
+				if (line.equals(BACK)) {
+					if (!isPrevOperationIsBack) {
+						// 現在ページを一つ戻る
+						history.pop();
+						isPrevOperationIsBack = true;
+					}
+					System.out.println(history.pop());
+				} else {
+					isPrevOperationIsBack = false;
+					Matcher mt = ptn.matcher(line);
+					if (mt.find()) {
+						// go some page
+						history.push(mt.group(1));
+						System.out.println(mt.group(1));
+					}
+				}
+			}
 
 			scan.close();
 		}
