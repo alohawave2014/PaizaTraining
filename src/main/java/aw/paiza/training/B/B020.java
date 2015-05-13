@@ -36,28 +36,21 @@ public class B020 {
 
 			Pattern ptn = Pattern.compile(GOPAGE);
 			Stack<String> history = new Stack<String>();
-			//			scan.next();
-			//			history.push("go to blank page");
+			String currentPage = "blank page";
 
-			boolean isPrevOperationIsBack = false;
 			for (int i = 0; i < qryCnt; i++) {
 				String line = scan.next();
 				if (line.equals(BACK)) {
-					if (!isPrevOperationIsBack) {
-						// 現在ページを一つ戻る
-						history.pop();
-						isPrevOperationIsBack = true;
-					}
-					System.out.println(history.pop());
+					currentPage = history.pop();
 				} else {
-					isPrevOperationIsBack = false;
 					Matcher mt = ptn.matcher(line);
 					if (mt.find()) {
+						history.push(currentPage);
 						// go some page
-						history.push(mt.group(1));
-						System.out.println(mt.group(1));
+						currentPage = mt.group(1);
 					}
 				}
+				System.out.println(currentPage);
 			}
 
 			scan.close();
