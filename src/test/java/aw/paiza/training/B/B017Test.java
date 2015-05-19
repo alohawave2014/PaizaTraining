@@ -11,7 +11,7 @@ public class B017Test {
 
 	private static B017Logic logic = new B017Logic();
 
-	@Test
+	// @Test
 	public void test() {
 		try {
 			String path = "B/B017";
@@ -23,6 +23,12 @@ public class B017Test {
 			fail("exceptin occured");
 		}
 
+	}
+
+	@Test
+	public void testSample1() {
+		logic.sample2("A***");
+		assertTrue(true);
 	}
 
 }
